@@ -95,6 +95,40 @@ const NOOR_TIMELINE = [
 ];
 
 // ═══════════════════════════════════════════════════════════════════
+// 3.5 DATA — SEERAH VIDEOS (فيديو السيرة)
+// ═══════════════════════════════════════════════════════════════════
+const NOOR_SEERAH_VIDEOS = [
+  { id: "aLVD1uvQIVs", title: "قصة الرجل الذي حاول تدمير الكعبة.. من هو أبرهة ولماذا فعلها؟ | ج 1", duration: "15:01", views: "مشاهدات عالية", date: "مؤخراً", episode: 1, author: "يوسف القط", img: "https://i.ytimg.com/vi/aLVD1uvQIVs/hqdefault.jpg", desc: "دراسة وثائقية وتحليل عميق لقصة أبرهة الحبشي ومحاولته هدم الكعبة." },
+  { id: "DuSVU6tfPGY", title: "لحظة مؤثرة.. كيف خطب النبي خديجة؟ وماذا حدث بعد نزول الوحي؟ | ج 2", duration: "12:52", views: "مشاهدات عالية", date: "مؤخراً", episode: 2, author: "يوسف القط", img: "https://i.ytimg.com/vi/DuSVU6tfPGY/hqdefault.jpg", desc: "تفاصيل خطبة الرسول الكريم للسيدة خديجة بنت خويلد رضي الله عنها." },
+  { id: "MOeZ-VehEt8", title: "الرجل الذي تحدى النبي في أول الدعوة.. من هو؟! | ج 3", duration: "11:12", views: "مشاهدات عالية", date: "مؤخراً", episode: 3, author: "يوسف القط", img: "https://i.ytimg.com/vi/MOeZ-VehEt8/hqdefault.jpg", desc: "عرض شيق لبيئة الدعوة السرية وتحدى الكبار في قريش واشتداد العواصف." },
+  { id: "MVHkNBjIxdg", title: "بعد وفاة ابن النبي.. رجل يشمت فيه، فتنزل آية تهز مكة! |ج 4", duration: "12:11", views: "مشاهدات عالية", date: "مؤخراً", episode: 4, author: "يوسف القط", img: "https://i.ytimg.com/vi/MVHkNBjIxdg/hqdefault.jpg", desc: "وقائع نزول سورة الكوثر ودفاع الحق جل وعلا عن رسوله المختار مواساة لقلبه الطاهر." },
+  { id: "PFnhwzbviPs", title: "مشهد مرعب عند الكعبة.. كاد النبي أن يموت مخنوقاً! | ج 5", duration: "10:58", views: "مشاهدات عالية", date: "مؤخراً", episode: 5, author: "يوسف القط", img: "https://i.ytimg.com/vi/PFnhwzbviPs/hqdefault.jpg", desc: "استعراض لقمة الأذى الذي تعرض له الحبيب المصطفى وصبره العظيم والبطولة من سيدنا أبي بكر الصديق." },
+  { id: "KXjyc-RjUI0", title: "كيف تحول عمر من أشد أعداء الإسلام.. إلى أعظم أنصاره؟! |ج 6", duration: "15:52", views: "مشاهدات عالية", date: "مؤخراً", episode: 6, author: "يوسف القط", img: "https://i.ytimg.com/vi/KXjyc-RjUI0/hqdefault.jpg", desc: "قصة إسلام فاروق الأمة الفارقة سيدنا عمر بن الخطاب رضي الله عنه وكيف هز البكاء قلبه." },
+  { id: "sro2ECBKKRk", title: "لماذا اعترفت قريش بالهزيمة ؟! | السيرة النبوية ج 7", duration: "10:08", views: "مشاهدات عالية", date: "مؤخراً", episode: 7, author: "يوسف القط", img: "https://i.ytimg.com/vi/sro2ECBKKRk/hqdefault.jpg", desc: "تحليل لأسباب اعتراف قريش الضمني بفشل مساعيها وإخفاق جهودها في تطويق الدعوة." },
+  { id: "rK6lvVhqABU", title: "ليه بدأ تعذيب الصحابة بعد فشل مفاوضات قريش ؟! | ج 8", duration: "16:03", views: "مشاهدات عالية", date: "مؤخراً", episode: 8, author: "يوسف القط", img: "https://i.ytimg.com/vi/rK6lvVhqABU/hqdefault.jpg", desc: "تفاصيل بدء مرحلة الاضطهاد والتعذيب الوحشي لضعفاء الصحابة والعبيد." },
+  { id: "_7JYecfz5Pk", title: "9 محاولات لقتل النبي ﷺ وهذه كانت الأخطر! | ج 9", duration: "18:31", views: "مشاهدات عالية", date: "مؤخراً", episode: 9, author: "يوسف القط", img: "https://i.ytimg.com/vi/_7JYecfz5Pk/hqdefault.jpg", desc: "استعراض توثيقي مذهل للمؤامرات التسع التي حيكت لاغتيال النبي محمد ﷺ من كبار قريش." },
+  { id: "VIGCB_Fv3bo", title: "عام الحزن.. أصعب أيام النبي ﷺ | ج 10", duration: "15:23", views: "مشاهدات عالية", date: "مؤخراً", episode: 10, author: "يوسف القط", img: "https://i.ytimg.com/vi/VIGCB_Fv3bo/hqdefault.jpg", desc: "تفاصيل العام الأشد ألماً في حياة المصطفى ﷺ برحيل عمه الحنون أبي طالب وزوجته الوفية." },
+  { id: "8r62KHENhtA", title: "من جراح الطائف إلى عروج السماء .. رحلة الإسراء والمعراج كاملة | ج ١١", duration: "20:28", views: "مشاهدات عالية", date: "مؤخراً", episode: 11, author: "يوسف القط", img: "https://i.ytimg.com/vi/8r62KHENhtA/hqdefault.jpg", desc: "رحلة تفصيلية من مآسي الطائف وجراحه الدامية، إلى معجزة تطييب الخواطر الربانية." },
+  { id: "jpHi8sIXuS0", title: "لماذا سُمي ابو بكر بهذا الاسم ؟ | ج 12", duration: "12:27", views: "مشاهدات عالية", date: "مؤخراً", episode: 12, author: "يوسف القط", img: "https://i.ytimg.com/vi/jpHi8sIXuS0/hqdefault.jpg", desc: "أصل تسمية الصديق رضي الله عنه بأبي بكر، وبداية إيمانه المطلق وملازمته الفاتنة للنبي." },
+  { id: "CwY6hkYaKMU", title: "بداية طريق المدينة و من هم ال 6 شباب ؟ | ج 13", duration: "10:17", views: "مشاهدات عالية", date: "مؤخراً", episode: 13, author: "يوسف القط", img: "https://i.ytimg.com/vi/CwY6hkYaKMU/hqdefault.jpg", desc: "شرح اللبنات الأولى للهجرة المباركة وقصة الشباب الستة من يثرب الذين التقوا بموسم الحج." },
+  { id: "-ucMDCs8XGs", title: "الاجتماع السري تحت عيون قريش في الظلام | ج 14", duration: "10:40", views: "مشاهدات عالية", date: "مؤخراً", episode: 14, author: "يوسف القط", img: "https://i.ytimg.com/vi/-ucMDCs8XGs/hqdefault.jpg", desc: "مباحثات بيعة العقبة السرية في جوف الليل وتحت غطاء السرية التام لتأسيس الدولة الجديدة." },
+  { id: "zHuM6BIA51A", title: "من هي أم سلمة ؟ | ج 15", duration: "10:50", views: "مشاهدات عالية", date: "مؤخراً", episode: 15, author: "يوسف القط", img: "https://i.ytimg.com/vi/zHuM6BIA51A/hqdefault.jpg", desc: "سيرة السيدة الجليلة أم سلمة رضي الله عنها، وقصة هجرتها المليئة بالصبر والألم والتضحية." },
+  { id: "OrUellT-SeI", title: "أخطر ليلة في التاريخ | ج 16", duration: "10:17", views: "مشاهدات عالية", date: "مؤخراً", episode: 16, author: "يوسف القط", img: "https://i.ytimg.com/vi/OrUellT-SeI/hqdefault.jpg", desc: "ليلة الهجرة الكبرى وتطويق الفتيان المسلحين لبيت النبوة، فدائية علي بن أبي طالب." },
+  { id: "6BHHkp-jRns", title: "ماذا حدث داخل الغار و كيف لم يجدوا الرسول ؟! | ج 17", duration: "11:51", views: "مشاهدات عالية", date: "مؤخراً", episode: 17, author: "يوسف القط", img: "https://i.ytimg.com/vi/6BHHkp-jRns/hqdefault.jpg", desc: "تفاصيل أيام الاختباء الحرجة في غار ثور المعلق، طرائد الملاحقين وقدرة اللطف الإلهي الشافي." },
+  { id: "nOu810zGNK4", title: "لحظة هجرة النبي مع ابا بكر و اكتشاف أمرهم !! | ج 18", duration: "9:40", views: "مشاهدات عالية", date: "مؤخراً", episode: 18, author: "يوسف القط", img: "https://i.ytimg.com/vi/nOu810zGNK4/hqdefault.jpg", desc: "تفاصيل السير الحثيث بالدروب الوعرة، ملاحقة سراقة بن مالك وعجائب ساخت بها أقدام فرسه." },
+  { id: "3WUxVcBlFEk", title: "استقبال أهل المدينة للرسول | ج 19", duration: "9:29", views: "مشاهدات عالية", date: "مؤخراً", episode: 19, author: "يوسف القط", img: "https://i.ytimg.com/vi/3WUxVcBlFEk/hqdefault.jpg", desc: "مشاهد مبهجة تدمع لها العيون للمدينة وهي تتزين بالنشيد والحفاوة والفرح العظيم." },
+  { id: "1Zp8G-nxoUg", title: "المدينة قبل الإسلام | ج 20", duration: "14:23", views: "مشاهدات عالية", date: "مؤخراً", episode: 20, author: "يوسف القط", img: "https://i.ytimg.com/vi/1Zp8G-nxoUg/hqdefault.jpg", desc: "دراسة تاريخية واجتماعية لأوضاع يثرب قبل مجيء الإسلام، التناحر الطويل للأوس والخزرج." },
+  { id: "qc9NHcL7YG0", title: "نهاية أبو لهب علي يد أمراة | ج 21", duration: "16:29", views: "مشاهدات عالية", date: "مؤخراً", episode: 21, author: "يوسف القط", img: "https://i.ytimg.com/vi/qc9NHcL7YG0/hqdefault.jpg", desc: "سقوط العجرفة لأبي لهب بعد نكبة بدر ووفاته اللاحقة بمرض العدسة بسبب صدمات الوجع." },
+  { id: "-WxrWXoxNUg", title: "كيف مات أبو جهل ؟ | ج 22", duration: "21:53", views: "مشاهدات عالية", date: "مؤخراً", episode: 22, author: "يوسف القط", img: "https://i.ytimg.com/vi/-WxrWXoxNUg/hqdefault.jpg", desc: "تفاصيل هلاك فرعون هذه الأمة عمرو بن هشام (أبو جهل) في يوم معركة بدر الكبرى." },
+  { id: "g_hhgh0Erd0", title: "كيف مات حمزة ابن عبد المطلب بالتفصيل ؟ | ج 23", duration: "25:42", views: "مشاهدات عالية", date: "مؤخراً", episode: 23, author: "يوسف القط", img: "https://i.ytimg.com/vi/g_hhgh0Erd0/hqdefault.jpg", desc: "ملحمة غزوة أحد الدامية، واستشهاد العظيم أسد الله وحبيب الأمة حمزة بن عبد المطلب." },
+  { id: "z60sPkuFzSk", title: "الغدر الآكبر الذي تعرض له المسلمين | ج 24", duration: "23:22", views: "مشاهدات عالية", date: "مؤخراً", episode: 24, author: "يوسف القط", img: "https://i.ytimg.com/vi/z60sPkuFzSk/hqdefault.jpg", desc: "تفاصيل يوم بئر معونة ويوم الرجيع، مآسي الغدر والتمثيل بالصحابة الكرام وحزن رسول الله." },
+  { id: "MJew12Jeuec", title: "إتهموا زوجة الرسول إتهام شديد جداً | ج 25", duration: "23:20", views: "مشاهدات عالية", date: "مؤخراً", episode: 25, author: "يوسف القط", img: "https://i.ytimg.com/vi/MJew12Jeuec/hqdefault.jpg", desc: "تفاصيل حادثة الإفك الأليمة والافتراء على الطاهرة أم المؤمنين عائشة رضي الله عنها." },
+  { id: "-Jjy9WNvk4I", title: "الليلة التي اتخرق فيها العهد و الدم اتسفك جوه الحرم | ج 26", duration: "14:17", views: "مشاهدات عالية", date: "مؤخراً", episode: 26, author: "يوسف القط", img: "https://i.ytimg.com/vi/-Jjy9WNvk4I/hqdefault.jpg", desc: "نقض قريش وحلفائها لصلح الحديبية الشائع وتعديهم على بني خزاعة تحت حماية الليل." },
+  { id: "5ryMz1imPXU", title: "نهاية كبار قريش و تفاصيل فتح مكة | ج 27", duration: "17:21", views: "مشاهدات عالية", date: "مؤخراً", episode: 27, author: "يوسف القط", img: "https://i.ytimg.com/vi/5ryMz1imPXU/hqdefault.jpg", desc: "يوم الفتح الأعظم لدخول مكة برؤوس خاضعة وتواضع فريد، هدم الأصنام وإقرار الأمان." },
+  { id: "0gNbbcota-4", title: "آخر لحظات في حياة الرسول ﷺ", duration: "27:03", views: "مشاهدات عالية", date: "مؤخراً", episode: 28, author: "يوسف القط", img: "https://i.ytimg.com/vi/0gNbbcota-4/hqdefault.jpg", desc: "اللحظات الأخيرة الجليلة المليئة بالدموع والعبر في حياة أشرف وآخر الأنبياء والمرسلين." }
+];
+
+// ═══════════════════════════════════════════════════════════════════
 // 4. DATA — GHAZAWAT (الغزوات)
 // ═══════════════════════════════════════════════════════════════════
 const NOOR_GHAZAWAT = [
@@ -845,6 +879,94 @@ function renderTimeline() {
     </div>
   `).join('');
   initReveal();
+  renderSeerahVideos();
+}
+
+function renderSeerahVideos() {
+  const container = $('#seerah-video-grid');
+  if (!container) return;
+  
+  container.innerHTML = NOOR_SEERAH_VIDEOS.map((vid, index) => {
+    // Escape quotes in strings for the onclick handler
+    const safeTitle = vid.title.replace(/'/g, "\\'").replace(/"/g, '\\"');
+    const safeId = vid.id.replace(/'/g, "\\'").replace(/"/g, '\\"');
+    const safeDuration = vid.duration.replace(/'/g, "\\'").replace(/"/g, '\\"');
+    const safeViews = vid.views.replace(/'/g, "\\'").replace(/"/g, '\\"');
+
+    return `
+    <div class="video-card reveal reveal-delay-${(index % 3)}" onclick="openVideoModal('${safeId}', '${safeTitle}', ${vid.episode}, '${safeDuration}', '${safeViews}')">
+      <div class="video-thumb" style="background-image: url('${vid.img}'); background-size: cover; background-position: center;">
+        <div class="video-play-btn">▶</div>
+        <span class="video-duration">${vid.duration}</span>
+      </div>
+      <div class="video-info">
+        <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:0.25rem;">
+          <span class="video-num">الحلقة ${vid.episode}</span>
+          <span style="font-size:0.7rem; color:var(--text-muted);">👁 ${vid.views}</span>
+        </div>
+        <h3 class="video-title">${vid.title}</h3>
+        <p style="font-size:0.8rem; color:var(--text-secondary); line-height:1.6; margin-top:0.5rem;">${vid.desc}</p>
+      </div>
+    </div>
+  `}).join('');
+  initReveal();
+}
+
+let activeCopiedVideoId = "";
+
+function openVideoModal(id, title, episode, duration, views) {
+  activeCopiedVideoId = id;
+  const modal = $('#video-player-modal');
+  const iframe = $('#video-player-iframe');
+  
+  if ($('#video-player-title')) html($('#video-player-title'), title);
+  if ($('#video-player-episode')) html($('#video-player-episode'), `الحلقة ${episode}`);
+  if ($('#video-player-duration')) html($('#video-player-duration'), `⏱ ${duration}`);
+  if ($('#video-yt-link')) $('#video-yt-link').href = `https://www.youtube.com/watch?v=${id}`;
+  
+  // Reset copy button state
+  const copyBtn = $('#video-copy-btn');
+  if (copyBtn) {
+    copyBtn.innerText = "نسخ رابط المشاركة 🔗";
+    copyBtn.style.background = "";
+    copyBtn.style.color = "";
+  }
+
+  if (iframe) {
+    iframe.src = `https://www.youtube.com/embed/${id}?autoplay=1&rel=0&modestbranding=1&playsinline=1`;
+  }
+  
+  if (modal) {
+    modal.classList.add('open');
+    document.body.style.overflow = "hidden"; // Prevent background scrolling
+  }
+}
+
+function closeVideoModal() {
+  const modal = $('#video-player-modal');
+  const iframe = $('#video-player-iframe');
+  if (modal) modal.classList.remove('open');
+  if (iframe) iframe.src = "";
+  document.body.style.overflow = "";
+}
+
+function copyVideoLink() {
+  if (!activeCopiedVideoId) return;
+  const shareUrl = `https://www.youtube.com/watch?v=${activeCopiedVideoId}`;
+  navigator.clipboard.writeText(shareUrl).then(() => {
+    const copyBtn = $('#video-copy-btn');
+    if (copyBtn) {
+      copyBtn.innerText = "تم النسخ! ✓";
+      copyBtn.style.background = "rgba(16, 185, 129, 0.1)"; // emerald-500 low opacity
+      copyBtn.style.color = "var(--emerald-500)";
+      setTimeout(() => {
+        copyBtn.innerText = "نسخ رابط المشاركة 🔗";
+        copyBtn.style.background = "";
+        copyBtn.style.color = "";
+      }, 2000);
+    }
+    showToast("تم نسخ رابط الفيديو للحافظة");
+  });
 }
 
 function openTimelineModal(idx) {

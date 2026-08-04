@@ -453,6 +453,19 @@
       <div class="timeline-container" id="timeline-container">
         <!-- Injected by JS -->
       </div>
+
+      <!-- Video Series Section -->
+      <div style="margin-top: 7rem;">
+        <div class="section-header reveal">
+          <span class="section-badge">السلسلة المرئية</span>
+          <h2 class="section-title">📺 السيرة النبوية الكبرى ﷺ</h2>
+          <div class="section-divider"><span>✦</span></div>
+          <p class="section-sub">السلسلة المرئية الكاملة للأستاذ يوسف القط — رحلة موثّقة عبر محطات السيرة العطرة.</p>
+        </div>
+        <div class="cards-grid-3" id="seerah-video-grid">
+          <!-- Injected by JS -->
+        </div>
+      </div>
     </div>
   </section>
 
@@ -730,6 +743,32 @@
     </div>
   </div>
 </footer>
+
+<!-- ═══════════════════════════════════════════════
+     VIDEO PLAYER MODAL
+     ═══════════════════════════════════════════════ -->
+<div class="video-modal" id="video-player-modal">
+  <div class="video-modal-backdrop" onclick="closeVideoModal()"></div>
+  <div class="video-modal-content">
+    <div class="video-modal-header">
+      <div class="video-modal-meta">
+        <h3 id="video-player-title" style="font-family:var(--font-arabic);font-size:1.3rem;margin-bottom:0.25rem;">عنوان الحلقة</h3>
+        <div style="font-size:0.85rem;color:var(--text-muted);display:flex;gap:1rem;">
+          <span id="video-player-episode">الحلقة رقم</span>
+          <span id="video-player-duration">المدة</span>
+        </div>
+      </div>
+      <button class="video-modal-close" onclick="closeVideoModal()">×</button>
+    </div>
+    <div class="video-modal-body">
+      <iframe id="video-player-iframe" src="" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+    </div>
+    <div class="video-modal-footer">
+      <button id="video-copy-btn" class="noor-btn" onclick="copyVideoLink()">نسخ رابط المشاركة 🔗</button>
+      <a id="video-yt-link" href="#" target="_blank" class="noor-btn" style="background:var(--emerald-600);color:white;">فتح في يوتيوب 📺</a>
+    </div>
+  </div>
+</div>
 
 <script src="noor-app.js"></script>
 </body>
