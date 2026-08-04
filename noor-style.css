@@ -2328,34 +2328,50 @@ input, select, textarea { font-family: inherit; }
    ─────────────────────────────────────────────────────────────────── */
 @media (max-width: 1024px) {
   .footer-grid { grid-template-columns: 1fr 1fr; gap: var(--space-8); }
-  .timeline-container::before { display: none; }
-  .timeline-item, .timeline-item:nth-child(even) { flex-direction: column; }
-  .timeline-content { max-width: 100%; }
-  .timeline-center { display: none; }
+  .timeline-container::before { left: 30px; }
+  .timeline-item, .timeline-item:nth-child(even) { flex-direction: column; align-items: flex-start; padding-left: 60px; text-align: right; }
+  .timeline-content { max-width: 100%; margin-bottom: 2rem; }
+  .timeline-center { position: absolute; left: 15px; top: 0; }
+  .hero-title { font-size: 3.5rem; }
 }
 
 @media (max-width: 768px) {
   .nav-links { display: none; }
   .nav-hamburger { display: flex; }
-  .daily-strip { padding: var(--space-10) var(--space-4); }
-  .hero-stats { gap: var(--space-8); }
+  .daily-strip { padding: var(--space-6) var(--space-4); grid-template-columns: 1fr; }
+  .hero-stats { gap: var(--space-4); flex-wrap: wrap; }
   .footer-grid { grid-template-columns: 1fr; }
-  .quick-sections { grid-template-columns: repeat(3, 1fr); }
-  .prayer-times-grid { grid-template-columns: repeat(3, 1fr); }
+  .quick-sections { grid-template-columns: repeat(2, 1fr); }
+  .prayer-times-grid { grid-template-columns: repeat(2, 1fr); }
   .surahs-grid { grid-template-columns: 1fr; }
-  .asma-grid { grid-template-columns: repeat(2, 1fr); }
+  .asma-grid { grid-template-columns: 1fr; }
+  .cards-grid-3, .cards-grid-4 { grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); }
+  .section-header { text-align: right; }
+  .section-title { font-size: 2rem; }
+  .container { padding: 0 var(--space-4); }
+  .reader-header h2 { font-size: 1.5rem; }
+  .hero-verse { font-size: 1.2rem; }
+  .video-modal-content { max-width: 100%; border-radius: var(--radius-md); }
+  .video-modal-header { padding: 1rem; flex-direction: column; gap: 0.5rem; align-items: stretch; position: relative; }
+  .video-modal-close { position: absolute; left: 1rem; top: 1rem; }
+  .video-modal-footer { padding: 1rem; flex-direction: column; gap: 0.5rem; }
+  .video-modal-footer .noor-btn { width: 100%; text-align: center; justify-content: center; }
 }
 
 @media (max-width: 480px) {
-  .hero-btns { flex-direction: column; align-items: center; }
-  .btn-primary, .btn-secondary { width: 100%; max-width: 280px; justify-content: center; }
-  .quick-sections { grid-template-columns: repeat(2, 1fr); }
-  .cards-grid-3 { grid-template-columns: 1fr; }
-  .cards-grid-4 { grid-template-columns: 1fr; }
-  .search-big { flex-direction: column; }
+  .hero-btns { flex-direction: column; align-items: stretch; width: 100%; }
+  .btn-primary, .btn-secondary { width: 100%; max-width: none; justify-content: center; }
+  .quick-sections { grid-template-columns: 1fr; }
+  .prayer-times-grid { grid-template-columns: 1fr; }
+  .cards-grid-3, .cards-grid-4 { grid-template-columns: 1fr; }
+  .search-big { flex-direction: column; gap: 0.5rem; }
   .mp-vol { display: none; }
-  .prayer-times-grid { grid-template-columns: repeat(2, 1fr); }
-  .azkar-tabs { flex-direction: row; overflow-x: auto; }
+  .azkar-tabs { flex-direction: row; flex-wrap: wrap; justify-content: center; gap: 0.5rem; }
+  .azkar-tab { width: calc(50% - 0.5rem); padding: 0.5rem; font-size: 0.8rem; text-align: center; }
+  .hero-title { font-size: 2.5rem; }
+  .stat-num { font-size: 2rem; }
+  .zekr-footer { flex-direction: column; gap: 1rem; align-items: stretch; }
+  .zekr-count-btn { width: 100%; justify-content: center; }
 }
 
 /* ───────────────────────────────────────────────────────────────────
