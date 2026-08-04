@@ -1,0 +1,736 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl" data-theme="light">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="نُور — أكبر وأفضل منصة إسلامية عربية شاملة، تجمع القرآن الكريم، السيرة النبوية، الأذكار، الأحاديث، قصص الأنبياء، الإذاعة الإسلامية وأسماء الله الحسنى في تجربة عصرية فريدة.">
+  <meta name="keywords" content="قرآن كريم, سيرة نبوية, أذكار, أحاديث, إسلام, أنبياء, صحابة, دعاء, فقه, غزوات">
+  <meta name="author" content="نُور">
+  <meta property="og:title" content="نُور — المنصة الإسلامية الشاملة">
+  <meta property="og:description" content="مرجعك الإسلامي الرقمي — القرآن، السيرة، الأذكار، الأحاديث وأكثر">
+  <meta property="og:type" content="website">
+  <meta name="theme-color" content="#065f46">
+  <title>نُور — المنصة الإسلامية الشاملة</title>
+
+  <!-- Preconnect for fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;500;600;700;800;900&family=Amiri:ital,wght@0,400;0,700;1,400&family=Tajawal:wght@300;400;500;700;800&family=Scheherazade+New:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="noor-style.css">
+</head>
+<body>
+
+<!-- ═══════════════════════════════════════════════════
+     LOADING OVERLAY
+     ═══════════════════════════════════════════════════ -->
+<div class="loading-overlay" id="loading-overlay">
+  <!-- SVG Islamic Ornament -->
+  <div class="loading-logo">
+    <svg width="80" height="80" viewBox="0 0 100 100" fill="none">
+      <polygon points="50,5 61,37 95,37 68,58 79,93 50,72 21,93 32,58 5,37 39,37" fill="none" stroke="#d4af37" stroke-width="2"/>
+      <circle cx="50" cy="50" r="20" fill="none" stroke="rgba(212,175,55,0.5)" stroke-width="1.5" stroke-dasharray="6 3"/>
+      <text x="50" y="56" text-anchor="middle" fill="#d4af37" font-size="22" font-family="Arial">🕌</text>
+    </svg>
+  </div>
+  <div class="loading-title">نُور</div>
+  <div class="loading-subtitle">المنصة الإسلامية الشاملة</div>
+  <div class="loading-bar">
+    <div class="loading-bar-fill"></div>
+  </div>
+</div>
+
+<!-- ═══════════════════════════════════════════════════
+     PROGRESS BAR
+     ═══════════════════════════════════════════════════ -->
+<div id="noor-progress-bar"></div>
+
+<!-- ═══════════════════════════════════════════════════
+     NAVIGATION
+     ═══════════════════════════════════════════════════ -->
+<nav class="noor-nav" id="main-nav">
+  <!-- Logo -->
+  <div class="nav-logo" onclick="navigateTo('home')">
+    <div class="nav-logo-icon">
+      <svg width="26" height="26" viewBox="0 0 100 100" fill="none">
+        <polygon points="50,8 61,40 95,40 68,61 79,93 50,72 21,93 32,61 5,40 39,40" fill="rgba(212,175,55,0.9)"/>
+      </svg>
+    </div>
+    نُور
+  </div>
+
+  <!-- Desktop Nav Links -->
+  <div class="nav-links">
+    <a class="nav-link active" data-section="home" onclick="navigateTo('home')">الرئيسية</a>
+    <a class="nav-link" data-section="quran" onclick="navigateTo('quran')">القرآن الكريم</a>
+    <a class="nav-link" data-section="seerah" onclick="navigateTo('seerah')">السيرة النبوية</a>
+    <a class="nav-link" data-section="ghazawat" onclick="navigateTo('ghazawat')">الغزوات</a>
+    <a class="nav-link" data-section="sahaba" onclick="navigateTo('sahaba')">الصحابة</a>
+    <a class="nav-link" data-section="stories" onclick="navigateTo('stories')">قصص الأنبياء</a>
+    <a class="nav-link" data-section="azkar" onclick="navigateTo('azkar')">الأذكار</a>
+    <a class="nav-link" data-section="radio" onclick="navigateTo('radio')">الإذاعة</a>
+    <a class="nav-link" data-section="asma" onclick="navigateTo('asma')">أسماء الله</a>
+    <a class="nav-link" data-section="search" onclick="navigateTo('search')">بحث</a>
+  </div>
+
+  <!-- Actions -->
+  <div class="nav-actions">
+    <button class="nav-btn" id="theme-toggle" title="تبديل الوضع الليلي">🌙</button>
+    <button class="nav-btn" onclick="navigateTo('search')" title="بحث — Ctrl+K">🔍</button>
+    <div class="nav-hamburger" id="nav-hamburger">
+      <span></span><span></span><span></span>
+    </div>
+  </div>
+</nav>
+
+<!-- Mobile Menu -->
+<div class="mobile-menu" id="mobile-menu">
+  <button class="mobile-menu-close" id="mobile-menu-close" aria-label="إغلاق القائمة">✕</button>
+  <a class="nav-link" onclick="navigateTo('home')">🏠 الرئيسية</a>
+  <a class="nav-link" onclick="navigateTo('quran')">📖 القرآن الكريم</a>
+  <a class="nav-link" onclick="navigateTo('seerah')">📜 السيرة النبوية</a>
+  <a class="nav-link" onclick="navigateTo('ghazawat')">⚔️ الغزوات</a>
+  <a class="nav-link" onclick="navigateTo('sahaba')">👳 الصحابة</a>
+  <a class="nav-link" onclick="navigateTo('stories')">🌟 قصص الأنبياء</a>
+  <a class="nav-link" onclick="navigateTo('azkar')">📿 الأذكار</a>
+  <a class="nav-link" onclick="navigateTo('radio')">📻 الإذاعة</a>
+  <a class="nav-link" onclick="navigateTo('asma')">✨ أسماء الله</a>
+  <a class="nav-link" onclick="navigateTo('search')">🔍 البحث</a>
+</div>
+
+<!-- ═══════════════════════════════════════════════════
+     MAIN CONTENT
+     ═══════════════════════════════════════════════════ -->
+<main>
+
+  <!-- ═══════════════════════════════════════════════
+       HOME SECTION
+       ═══════════════════════════════════════════════ -->
+  <section id="section-home" class="noor-section active">
+
+    <!-- HERO -->
+    <div class="hero-section">
+      <div class="hero-bg"></div>
+      <div class="hero-mesh"></div>
+      <div class="hero-grid"></div>
+
+      <!-- Islamic Ornaments SVG -->
+      <div class="hero-ornament" style="top:8%;right:4%;animation-delay:0.5s">
+        <svg width="130" height="130" viewBox="0 0 100 100" fill="none" stroke="rgba(212,175,55,0.35)" stroke-width="0.5">
+          <polygon points="50,5 61,39 95,39 67,60 78,95 50,74 22,95 33,60 5,39 39,39"/>
+          <circle cx="50" cy="50" r="28" stroke-dasharray="4 3"/>
+          <polygon points="50,20 58,45 85,45 63,60 71,86 50,71 29,86 37,60 15,45 42,45" opacity="0.4"/>
+        </svg>
+      </div>
+      <div class="hero-ornament" style="bottom:12%;left:5%;transform:scale(1.4);animation-delay:0.8s">
+        <svg width="100" height="100" viewBox="0 0 100 100" fill="none" stroke="rgba(212,175,55,0.25)" stroke-width="0.5">
+          <polygon points="50,10 60,40 90,50 60,60 50,90 40,60 10,50 40,40"/>
+          <circle cx="50" cy="50" r="22"/>
+        </svg>
+      </div>
+      <div class="hero-ornament" style="top:50%;left:2%;animation-delay:1s">
+        <svg width="60" height="60" viewBox="0 0 100 100" fill="none" stroke="rgba(5,150,105,0.3)" stroke-width="1">
+          <rect x="20" y="20" width="60" height="60" rx="5" transform="rotate(45 50 50)"/>
+          <circle cx="50" cy="50" r="15"/>
+        </svg>
+      </div>
+      <div class="hero-ornament" style="top:20%;left:30%;animation-delay:1.2s">
+        <svg width="40" height="40" viewBox="0 0 100 100" fill="none" stroke="rgba(212,175,55,0.2)" stroke-width="1">
+          <circle cx="50" cy="50" r="45" stroke-dasharray="8 4"/>
+        </svg>
+      </div>
+
+      <div class="hero-content">
+        <div class="hero-badge">◆ نُورٌ يَهْدِي الْقُلُوب ◆</div>
+        <h1 class="hero-title">
+          المنصة الإسلامية<br>
+          <span class="gold-word">الشاملة — نُور</span>
+        </h1>
+        <div class="hero-verse">
+          ﴿ يَهْدِي اللَّهُ لِنُورِهِ مَن يَشَاءُ ﴾
+          <span style="font-size:0.7em;display:block;margin-top:0.3rem;color:rgba(212,175,55,0.6)">سورة النور — الآية ٣٥</span>
+        </div>
+        <p class="hero-sub">
+          مرجعك الإسلامي الرقمي الشامل — تصفح القرآن الكريم، استكشف السيرة النبوية، 
+          أدِّ أذكارك، واستمع لأعذب التلاوات، في تجربة عصرية تليق بعظمة هذا الدين.
+        </p>
+        <div class="hero-btns">
+          <button class="btn-primary" onclick="navigateTo('quran')">
+            📖 ابدأ بالقرآن الكريم
+          </button>
+          <button class="btn-secondary" onclick="navigateTo('radio')">
+            🎙️ استمع للإذاعة
+          </button>
+        </div>
+        <div class="hero-stats">
+          <div class="hero-stat">
+            <div class="hero-stat-num" data-target="114">0</div>
+            <div class="hero-stat-label">سورة قرآنية</div>
+          </div>
+          <div class="hero-stat">
+            <div class="hero-stat-num" data-target="6236">0</div>
+            <div class="hero-stat-label">آية كريمة</div>
+          </div>
+          <div class="hero-stat">
+            <div class="hero-stat-num" data-target="14">0</div>
+            <div class="hero-stat-label">محطة سيرة</div>
+          </div>
+          <div class="hero-stat">
+            <div class="hero-stat-num" data-target="23">0</div>
+            <div class="hero-stat-label">إذاعة إسلامية</div>
+          </div>
+          <div class="hero-stat">
+            <div class="hero-stat-num" data-target="99">0</div>
+            <div class="hero-stat-label">اسم من أسماء الله</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="hero-scroll" onclick="document.getElementById('home-content').scrollIntoView({behavior:'smooth'})">
+        <span>اكتشف المزيد</span>
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <polyline points="6 9 12 15 18 9"></polyline>
+        </svg>
+      </div>
+    </div>
+
+    <!-- HOME CONTENT -->
+    <div id="home-content">
+
+      <!-- Daily Cards -->
+      <div class="daily-strip">
+
+        <!-- آية اليوم -->
+        <div class="daily-card reveal">
+          <span class="daily-card-type">📖 آية اليوم</span>
+          <div class="daily-card-text" id="daily-ayah-text">
+            <span class="skeleton" style="height:2rem;display:block;margin-bottom:0.5rem"></span>
+            <span class="skeleton" style="height:1.5rem;display:block;width:70%"></span>
+          </div>
+          <div class="daily-card-source" id="daily-ayah-source">جاري التحميل...</div>
+          <div class="daily-card-actions">
+            <button class="daily-action-btn" onclick="shareContent(document.getElementById('daily-ayah-text').textContent,'آية اليوم من نُور')">📤 مشاركة</button>
+            <button class="daily-action-btn" onclick="loadDailyAyah()">🔄 آية أخرى</button>
+          </div>
+        </div>
+
+        <!-- حديث اليوم -->
+        <div class="daily-card reveal reveal-delay-1">
+          <span class="daily-card-type">💎 حديث اليوم</span>
+          <div class="daily-card-text" id="daily-hadith-text">جاري التحميل...</div>
+          <div class="daily-card-source" id="daily-hadith-source"></div>
+          <div class="daily-card-actions">
+            <button class="daily-action-btn" onclick="shareContent(document.getElementById('daily-hadith-text').textContent,'حديث اليوم من نُور')">📤 مشاركة</button>
+          </div>
+        </div>
+
+        <!-- دعاء اليوم -->
+        <div class="daily-card reveal reveal-delay-2">
+          <span class="daily-card-type">🤲 دعاء اليوم</span>
+          <div class="daily-card-text" id="daily-dua-text">جاري التحميل...</div>
+          <div class="daily-card-source" id="daily-dua-source"></div>
+          <div class="daily-card-actions">
+            <button class="daily-action-btn" onclick="shareContent(document.getElementById('daily-dua-text').textContent,'دعاء اليوم من نُور')">📤 مشاركة</button>
+          </div>
+        </div>
+
+        <!-- مواقيت الصلاة -->
+        <div class="daily-card prayer-widget reveal reveal-delay-3">
+          <div class="prayer-widget-title">🕌 مواقيت الصلاة — الرياض</div>
+          <div id="prayer-widget-content">
+            <div class="prayer-times-grid">
+              <div class="prayer-time-item"><div class="prayer-name">🌄 الفجر</div><div class="prayer-time skeleton" style="height:1.2rem"></div></div>
+              <div class="prayer-time-item"><div class="prayer-name">☀️ الظهر</div><div class="prayer-time skeleton" style="height:1.2rem"></div></div>
+              <div class="prayer-time-item"><div class="prayer-name">🌤️ العصر</div><div class="prayer-time skeleton" style="height:1.2rem"></div></div>
+              <div class="prayer-time-item"><div class="prayer-name">🌅 المغرب</div><div class="prayer-time skeleton" style="height:1.2rem"></div></div>
+              <div class="prayer-time-item"><div class="prayer-name">🌙 العشاء</div><div class="prayer-time skeleton" style="height:1.2rem"></div></div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Quick Sections -->
+      <div class="container py-20">
+        <div class="section-header reveal">
+          <span class="section-badge">⚡ وصول سريع</span>
+          <h2 class="section-title">استكشف المنصة</h2>
+          <div class="section-divider"><span>✦</span></div>
+          <p class="section-sub">كل ما يحتاجه المسلم في مكان واحد — منظّم، سريع، وسهل الاستخدام</p>
+        </div>
+
+        <div class="quick-sections reveal">
+          <div class="quick-section-card" onclick="navigateTo('quran')">
+            <span class="qs-icon">📖</span>
+            <div class="qs-label">القرآن الكريم</div>
+          </div>
+          <div class="quick-section-card" onclick="navigateTo('seerah')">
+            <span class="qs-icon">📜</span>
+            <div class="qs-label">السيرة النبوية</div>
+          </div>
+          <div class="quick-section-card" onclick="navigateTo('ghazawat')">
+            <span class="qs-icon">⚔️</span>
+            <div class="qs-label">الغزوات</div>
+          </div>
+          <div class="quick-section-card" onclick="navigateTo('sahaba')">
+            <span class="qs-icon">👳</span>
+            <div class="qs-label">الصحابة</div>
+          </div>
+          <div class="quick-section-card" onclick="navigateTo('stories')">
+            <span class="qs-icon">🌟</span>
+            <div class="qs-label">قصص الأنبياء</div>
+          </div>
+          <div class="quick-section-card" onclick="navigateTo('azkar')">
+            <span class="qs-icon">📿</span>
+            <div class="qs-label">الأذكار</div>
+          </div>
+          <div class="quick-section-card" onclick="navigateTo('radio')">
+            <span class="qs-icon">📻</span>
+            <div class="qs-label">الإذاعة</div>
+          </div>
+          <div class="quick-section-card" onclick="navigateTo('asma')">
+            <span class="qs-icon">✨</span>
+            <div class="qs-label">أسماء الله</div>
+          </div>
+          <div class="quick-section-card" onclick="navigateTo('search')">
+            <span class="qs-icon">🔍</span>
+            <div class="qs-label">البحث الشامل</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Stats -->
+      <div class="container py-20 pattern-bg">
+        <div class="section-header reveal">
+          <span class="section-badge">📊 إحصائيات المنصة</span>
+          <h2 class="section-title">أرقام تتحدث</h2>
+        </div>
+        <div class="stats-section-grid">
+          <div class="stat-card reveal">
+            <div class="stat-num">١١٤</div>
+            <div class="stat-label">سورة قرآنية كريمة</div>
+          </div>
+          <div class="stat-card reveal reveal-delay-1">
+            <div class="stat-num">٦٢٣٦</div>
+            <div class="stat-label">آية كريمة متاحة</div>
+          </div>
+          <div class="stat-card reveal reveal-delay-2">
+            <div class="stat-num">١٤</div>
+            <div class="stat-label">محطة في السيرة النبوية</div>
+          </div>
+          <div class="stat-card reveal reveal-delay-3">
+            <div class="stat-num">٨</div>
+            <div class="stat-label">غزوة نبوية موثّقة</div>
+          </div>
+          <div class="stat-card reveal reveal-delay-4">
+            <div class="stat-num">١٢</div>
+            <div class="stat-label">صحابي جليل</div>
+          </div>
+          <div class="stat-card reveal">
+            <div class="stat-num">٢٣</div>
+            <div class="stat-label">محطة إذاعية مباشرة</div>
+          </div>
+          <div class="stat-card reveal reveal-delay-1">
+            <div class="stat-num">٩٩</div>
+            <div class="stat-label">اسماً من أسماء الله</div>
+          </div>
+          <div class="stat-card reveal reveal-delay-2">
+            <div class="stat-num">٨</div>
+            <div class="stat-label">قصص للأنبياء</div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════════════
+       QURAN SECTION
+       ═══════════════════════════════════════════════ -->
+  <section id="section-quran" class="noor-section">
+    <div class="container">
+      <div class="section-header reveal">
+        <span class="section-badge">القرآن الكريم</span>
+        <h2 class="section-title">📖 القرآن الكريم</h2>
+        <div class="section-divider"><span>✦</span></div>
+        <p class="section-sub">اقرأ واستمع لكتاب الله العزيز — ١١٤ سورة كريمة مع التفسير والترجمة</p>
+      </div>
+
+      <!-- List View -->
+      <div id="quran-list-view">
+        <!-- Controls -->
+        <div class="quran-controls reveal">
+          <div class="quran-search">
+            <span class="quran-search-icon">🔍</span>
+            <input type="text" id="quran-search-input" placeholder="ابحث بالاسم أو الرقم..." autocomplete="off">
+          </div>
+        </div>
+        <!-- Surahs Grid -->
+        <div class="surahs-grid" id="surahs-grid">
+          <!-- Injected by JS -->
+          <div style="grid-column:1/-1;text-align:center;padding:3rem;color:var(--text-muted)">
+            <div style="font-size:3rem;margin-bottom:1rem">📖</div>
+            <p>جاري تحميل السور الكريمة...</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Reader View -->
+      <div id="quran-reader-view" class="hidden">
+        <div class="reader-header">
+          <button class="reader-back" onclick="backToSurahList()">
+            ← العودة لقائمة السور
+          </button>
+          <div class="reader-controls-bar">
+            <button class="reader-ctrl-btn active" id="toggle-trans-btn" onclick="toggleTranslation()">
+              🌐 الترجمة
+            </button>
+            <button class="reader-ctrl-btn" onclick="changeFontSize(-1)">أ-</button>
+            <button class="reader-ctrl-btn" id="font-size-label">28px</button>
+            <button class="reader-ctrl-btn" onclick="changeFontSize(1)">أ+</button>
+          </div>
+        </div>
+
+        <!-- Surah Header -->
+        <div class="reader-surah-header">
+          <!-- SVG ornament -->
+          <svg style="position:absolute;top:10px;right:10px;opacity:0.1" width="80" height="80" viewBox="0 0 100 100" fill="none" stroke="white" stroke-width="1">
+            <polygon points="50,5 61,39 95,39 67,60 78,95 50,74 22,95 33,60 5,39 39,39"/>
+          </svg>
+          <h2 class="reader-surah-name" id="reader-surah-name">—</h2>
+          <div class="reader-surah-meta" id="reader-surah-meta">
+            <span>جاري التحميل...</span>
+          </div>
+        </div>
+
+        <!-- Audio Bar -->
+        <div class="audio-bar">
+          <button class="audio-play-btn" id="audio-play-btn" onclick="toggleAudioPlayback()" title="تشغيل/إيقاف التلاوة">
+            ▶
+          </button>
+          <div style="flex:1">
+            <div class="audio-progress" id="audio-progress">
+              <div class="audio-progress-fill" id="audio-progress-fill"></div>
+            </div>
+          </div>
+          <span class="audio-time" id="audio-time">0:00</span>
+          <audio id="surah-audio"
+            onended="document.getElementById('audio-play-btn').textContent='▶'"
+            ontimeupdate="
+              const a=this;
+              const pf=document.getElementById('audio-progress-fill');
+              const at=document.getElementById('audio-time');
+              if(pf&&a.duration)pf.style.width=(a.currentTime/a.duration*100)+'%';
+              if(at)at.textContent=Math.floor(a.currentTime/60)+':'+String(Math.floor(a.currentTime%60)).padStart(2,'0');
+            "
+          ></audio>
+        </div>
+
+        <!-- Ayahs -->
+        <div id="ayahs-container" style="padding:0 0.5rem">
+          <!-- Injected by JS -->
+        </div>
+
+        <!-- Nav Buttons -->
+        <div style="display:flex;justify-content:space-between;align-items:center;margin-top:2rem;padding-top:1.5rem;border-top:1px solid var(--border-color)">
+          <button class="reader-back" onclick="if(NoorApp.selectedSurah&&NoorApp.selectedSurah.number>1)openSurah(NoorApp.selectedSurah.number-1)">← السورة السابقة</button>
+          <button class="reader-back" onclick="if(NoorApp.selectedSurah&&NoorApp.selectedSurah.number<114)openSurah(NoorApp.selectedSurah.number+1)">السورة التالية →</button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════════════
+       SEERAH SECTION
+       ═══════════════════════════════════════════════ -->
+  <section id="section-seerah" class="noor-section">
+    <div class="container">
+      <div class="section-header reveal">
+        <span class="section-badge">التاريخ الإسلامي</span>
+        <h2 class="section-title">📜 السيرة النبوية الشريفة</h2>
+        <div class="section-divider"><span>✦</span></div>
+        <p class="section-sub">رحلة المصطفى ﷺ من المولد إلى الرفيق الأعلى — محطات غيّرت مجرى التاريخ وأنارت البشرية</p>
+      </div>
+      <div class="timeline-container" id="timeline-container">
+        <!-- Injected by JS -->
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════════════
+       GHAZAWAT SECTION
+       ═══════════════════════════════════════════════ -->
+  <section id="section-ghazawat" class="noor-section">
+    <div class="container">
+      <div class="section-header reveal">
+        <span class="section-badge">المعارك الفاصلة</span>
+        <h2 class="section-title">⚔️ غزوات النبي ﷺ</h2>
+        <div class="section-divider"><span>✦</span></div>
+        <p class="section-sub">مواقف الدفاع عن العقيدة وبناء الدولة الإسلامية — دروس في الصبر والتخطيط والنصر</p>
+      </div>
+      <div class="cards-grid-3" id="ghazawat-grid">
+        <!-- Injected by JS -->
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════════════
+       SAHABA SECTION
+       ═══════════════════════════════════════════════ -->
+  <section id="section-sahaba" class="noor-section">
+    <div class="container">
+      <div class="section-header reveal">
+        <span class="section-badge">الجيل الفريد</span>
+        <h2 class="section-title">👳 صحابة النبي ﷺ</h2>
+        <div class="section-divider"><span>✦</span></div>
+        <p class="section-sub">رجال ونساء صدقوا ما عاهدوا الله عليه — كانوا نجوم الهدى وحملة الرسالة</p>
+      </div>
+      <div class="cards-grid-4" id="sahaba-grid">
+        <!-- Injected by JS -->
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════════════
+       STORIES SECTION
+       ═══════════════════════════════════════════════ -->
+  <section id="section-stories" class="noor-section">
+    <div class="container">
+      <div id="stories-main-view">
+        <div class="section-header reveal">
+          <span class="section-badge">قصص القرآن</span>
+          <h2 class="section-title">🌟 قصص الأنبياء</h2>
+          <div class="section-divider"><span>✦</span></div>
+          <p class="section-sub">أحسن القصص — سير الأنبياء والمرسلين كما أخبر بها القرآن الكريم</p>
+        </div>
+        <div class="cards-grid-3" id="stories-grid">
+          <!-- Injected by JS -->
+        </div>
+      </div>
+
+      <!-- Story Reader -->
+      <div id="story-reader-view" class="hidden">
+        <div class="story-reader">
+          <button class="story-reader-back" onclick="backToStories()">← العودة لقائمة القصص</button>
+          <div style="margin-bottom:0.75rem">
+            <span class="section-badge" id="story-reader-cat"></span>
+          </div>
+          <h2 class="story-reader-title" id="story-reader-title"></h2>
+          <div class="section-divider" style="justify-content:flex-start;margin-bottom:1.5rem"><span>✦</span></div>
+          <div class="story-reader-body" id="story-reader-body"></div>
+          <div style="margin-top:2rem;padding-top:1.5rem;border-top:1px solid var(--border-color);display:flex;gap:1rem;flex-wrap:wrap">
+            <button class="reader-ctrl-btn" onclick="shareContent(document.getElementById('story-reader-body').textContent,document.getElementById('story-reader-title').textContent)">📤 مشاركة</button>
+            <button class="reader-ctrl-btn" onclick="backToStories()">← قصة أخرى</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════════════
+       AZKAR SECTION
+       ═══════════════════════════════════════════════ -->
+  <section id="section-azkar" class="noor-section">
+    <div class="container">
+      <div class="section-header reveal">
+        <span class="section-badge">تحصين المسلم</span>
+        <h2 class="section-title">📿 الأذكار</h2>
+        <div class="section-divider"><span>✦</span></div>
+        <p class="section-sub">حصن المسلم من الأذكار والأدعية النبوية الثابتة — مع عداد تفاعلي</p>
+      </div>
+
+      <!-- Tabs -->
+      <div class="azkar-tabs reveal">
+        <button class="azkar-tab active" data-cat="morning" onclick="switchAzkarCat('morning')">🌅 الصباح</button>
+        <button class="azkar-tab" data-cat="evening" onclick="switchAzkarCat('evening')">🌙 المساء</button>
+        <button class="azkar-tab" data-cat="sleep" onclick="switchAzkarCat('sleep')">💤 النوم</button>
+        <button class="azkar-tab" data-cat="prayer" onclick="switchAzkarCat('prayer')">🕌 بعد الصلاة</button>
+        <button class="azkar-tab" data-cat="travel" onclick="switchAzkarCat('travel')">🚗 السفر</button>
+        <button class="azkar-tab" onclick="resetAzkar()" style="color:var(--text-muted);min-width:auto">🔄 إعادة</button>
+      </div>
+
+      <!-- List -->
+      <div class="azkar-list" id="azkar-list">
+        <!-- Injected by JS -->
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════════════
+       RADIO SECTION
+       ═══════════════════════════════════════════════ -->
+  <section id="section-radio" class="noor-section">
+    <div class="container">
+      <div class="section-header reveal">
+        <span class="section-badge">البث المباشر</span>
+        <h2 class="section-title">📻 الإذاعة الإسلامية</h2>
+        <div class="section-divider"><span>✦</span></div>
+        <p class="section-sub">٢٣ محطة إذاعية إسلامية مباشرة — قرآن، سيرة، تفسير، أذكار، وفتاوى</p>
+      </div>
+
+      <!-- Filter Bar -->
+      <div class="radio-filter-bar reveal">
+        <div class="radio-search">
+          <input type="text" id="radio-search-input" placeholder="ابحث عن محطة..." autocomplete="off">
+        </div>
+        <select class="radio-filter-select" id="radio-cat-select">
+          <option value="">جميع التصنيفات</option>
+          <option value="قراء">قراء</option>
+          <option value="السيرة النبوية">السيرة النبوية</option>
+          <option value="تفسير">التفسير</option>
+          <option value="أذكار">الأذكار</option>
+          <option value="فتاوى">الفتاوى</option>
+          <option value="منوعات">منوعات</option>
+        </select>
+      </div>
+
+      <!-- Stations Grid -->
+      <div class="stations-grid" id="stations-grid">
+        <!-- Injected by JS -->
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════════════
+       ASMA ALLAH SECTION
+       ═══════════════════════════════════════════════ -->
+  <section id="section-asma" class="noor-section">
+    <div class="container">
+      <div class="section-header reveal">
+        <span class="section-badge">أسماء الله الحسنى</span>
+        <h2 class="section-title">✨ أسماء الله الحسنى</h2>
+        <div class="section-divider"><span>✦</span></div>
+        <p class="section-sub">﴿ وَلِلَّهِ الْأَسْمَاءُ الْحُسْنَىٰ فَادْعُوهُ بِهَا ﴾ — الأعراف ١٨٠ — تعرّف على معاني أسماء الله الـ٩٩</p>
+      </div>
+      <div class="asma-grid" id="asma-grid">
+        <!-- Injected by JS -->
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════════════
+       SEARCH SECTION
+       ═══════════════════════════════════════════════ -->
+  <section id="section-search" class="noor-section">
+    <div class="container">
+      <div class="search-hero reveal">
+        <h2 class="search-hero-title">🔍 البحث الشامل في نُور</h2>
+        <div class="search-big">
+          <input type="text" id="search-input" placeholder="ابحث في القرآن، السيرة، الصحابة، الأذكار، الأحاديث..." autocomplete="off">
+          <button id="search-btn">بحث</button>
+        </div>
+        <p style="color:rgba(255,255,255,0.4);font-size:0.8rem;margin-top:1rem">
+          يمكنك استخدام الاختصار Ctrl+K للوصول السريع للبحث
+        </p>
+      </div>
+
+      <div class="search-results-list" id="search-results">
+        <!-- Injected by JS -->
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<!-- ═══════════════════════════════════════════════════
+     TIMELINE MODAL
+     ═══════════════════════════════════════════════════ -->
+<div class="timeline-modal" id="timeline-modal" role="dialog" aria-modal="true">
+  <div class="timeline-modal-backdrop"></div>
+  <div class="timeline-modal-card">
+    <button class="timeline-modal-close" id="timeline-modal-close" aria-label="إغلاق">✕</button>
+    <div style="margin-bottom:0.75rem">
+      <span class="section-badge" style="font-size:0.7rem">تفاصيل</span>
+    </div>
+    <h3 style="font-size:1.4rem;font-weight:900;color:var(--text-primary);margin-bottom:0.5rem" id="timeline-modal-title"></h3>
+    <p style="font-size:0.82rem;color:var(--emerald-600);font-weight:600;margin-bottom:1.5rem" id="timeline-modal-year"></p>
+    <div style="font-family:var(--font-text);font-size:0.97rem;line-height:2;color:var(--text-secondary);direction:rtl" id="timeline-modal-detail"></div>
+  </div>
+</div>
+
+<!-- ═══════════════════════════════════════════════════
+     MINI AUDIO PLAYER
+     ═══════════════════════════════════════════════════ -->
+<div id="noor-mini-player" role="region" aria-label="مشغل الصوت">
+  <span class="mp-icon" id="mp-icon">🎙️</span>
+  <div class="mp-info">
+    <div class="mp-cat" id="mp-cat">الإذاعة الإسلامية</div>
+    <div class="mp-name" id="mp-name">جاري التشغيل...</div>
+  </div>
+  <div class="mp-controls">
+    <button class="mp-btn play" id="mp-play-btn" title="تشغيل/إيقاف">▶</button>
+    <button class="mp-btn stop" id="mp-stop-btn" title="إيقاف وإغلاق">✕</button>
+  </div>
+  <div class="mp-vol">
+    <span style="font-size:0.85rem">🔊</span>
+    <input type="range" class="mp-vol-slider" id="mp-volume" min="0" max="100" value="80">
+  </div>
+</div>
+
+<!-- ═══════════════════════════════════════════════════
+     BACK TO TOP
+     ═══════════════════════════════════════════════════ -->
+<button id="back-to-top" title="العودة للأعلى" aria-label="العودة لأعلى الصفحة">↑</button>
+
+<!-- ═══════════════════════════════════════════════════
+     FOOTER
+     ═══════════════════════════════════════════════════ -->
+<footer class="noor-footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div>
+        <div class="footer-brand-logo">
+          <svg width="32" height="32" viewBox="0 0 100 100" fill="none">
+            <polygon points="50,5 61,39 95,39 67,60 78,95 50,74 22,95 33,60 5,39 39,39" fill="#d4af37" opacity="0.9"/>
+          </svg>
+          نُور <span>🕌</span>
+        </div>
+        <p class="footer-brand-desc">
+          منصة إسلامية شاملة تهدف إلى تقديم المحتوى الإسلامي الأصيل بأسلوب عصري، 
+          لتكون المرجع الرقمي الموثوق لكل مسلم.
+        </p>
+      </div>
+      <div>
+        <div class="footer-section-title">أقسام المنصة</div>
+        <ul class="footer-links">
+          <li><a onclick="navigateTo('quran')">القرآن الكريم</a></li>
+          <li><a onclick="navigateTo('seerah')">السيرة النبوية</a></li>
+          <li><a onclick="navigateTo('ghazawat')">الغزوات</a></li>
+          <li><a onclick="navigateTo('sahaba')">الصحابة الكرام</a></li>
+          <li><a onclick="navigateTo('stories')">قصص الأنبياء</a></li>
+        </ul>
+      </div>
+      <div>
+        <div class="footer-section-title">المكتبة الصوتية</div>
+        <ul class="footer-links">
+          <li><a onclick="navigateTo('radio')">الإذاعة الإسلامية</a></li>
+          <li><a onclick="navigateTo('azkar')">الأذكار والأدعية</a></li>
+          <li><a onclick="navigateTo('asma')">أسماء الله الحسنى</a></li>
+          <li><a onclick="navigateTo('search')">البحث الشامل</a></li>
+        </ul>
+      </div>
+      <div>
+        <div class="footer-section-title">المصادر العلمية</div>
+        <ul class="footer-links">
+          <li><a>صحيح البخاري ومسلم</a></li>
+          <li><a>الرحيق المختوم</a></li>
+          <li><a>سيرة ابن هشام</a></li>
+          <li><a>زاد المعاد</a></li>
+          <li><a>مجمع الملك فهد للقرآن</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <hr class="footer-divider">
+
+    <div class="footer-bottom">
+      <span class="footer-salah">
+        ﴿ إِنَّ اللَّهَ وَمَلَائِكَتَهُ يُصَلُّونَ عَلَى النَّبِيِّ ۚ يَا أَيُّهَا الَّذِينَ آمَنُوا صَلُّوا عَلَيْهِ وَسَلِّمُوا تَسْلِيمًا ﴾
+      </span>
+      <p>منصة نُور — جميع الحقوق محفوظة © ١٤٤٧ هـ / ٢٠٢٦ م | صُمِّمت بحب لخدمة الإسلام والمسلمين</p>
+    </div>
+  </div>
+</footer>
+
+<script src="noor-app.js"></script>
+</body>
+</html>
